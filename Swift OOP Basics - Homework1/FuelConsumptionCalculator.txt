@@ -1,0 +1,59 @@
+//Sorry for giving you .txt file but I was compiling the code online but not in Xcode Playground
+
+import Foundation
+
+struct Car {
+    var totalKilometers: Double
+    var totalLitersBurnt: Double
+    
+    init (totalKilometers: Double, totalLitersBurnt: Double) {
+        self.totalKilometers = totalKilometers
+        self.totalLitersBurnt = totalLitersBurnt
+    }
+    
+    mutating func addDistanceAndFuel(distanceToAdd: Double, fuelToAdd: Double) {
+        print("Car was refueled! You have travelled \(distanceToAdd) km with \(fuelToAdd) liters since your last refueling. Your current average consumption is \(calculateAverageConsumptionLitersPer100(litersBurnt: fuelToAdd, kilometers: distanceToAdd)) l/100km")
+        
+        self.totalKilometers += distanceToAdd
+        self.totalLitersBurnt += fuelToAdd
+    }
+    
+    func calculateAveragePricePerKilometer(fuelPricePerLiter: Double) -> Double {
+        let average = (fuelPricePerLiter * calculateTotalAverageConsumptionLitersPer100()) / 100
+    
+        return average
+    }
+    
+    func calculateAverageConsumptionLitersPer100(litersBurnt: Double,
+    kilometers: Double) -> Double {
+        return litersBurnt / (kilometers / 100)
+    }
+    
+    func calculateTotalAverageConsumptionLitersPer100() -> Double {
+        let averageConsumption = totalLitersBurnt / (totalKilometers / 100)
+    
+        return averageConsumption
+    }
+    
+    func calculateAverageConsumptionMpg() -> Double {
+        let rate = 235.2;
+    
+        return rate / calculateTotalAverageConsumptionLitersPer100()
+    }
+}
+
+var car = Car(totalKilometers: 0, totalLitersBurnt: 0)
+
+car.addDistanceAndFuel(distanceToAdd: 250, fuelToAdd: 50)
+
+let pricePerLiter = 2.05
+
+print(String(format: "TOTAL Average consumption: %0.2f l/100km", car.calculateTotalAverageConsumptionLitersPer100()))
+print(String(format: "TOTAL Average consumption: %0.2f mpg", car.calculateAverageConsumptionMpg()))
+print(String(format: "TOTAL Average price per kilometer: %0.2f bgn", car.calculateAveragePricePerKilometer(fuelPricePerLiter: pricePerLiter)))
+
+car.addDistanceAndFuel(distanceToAdd: 400, fuelToAdd: 40)
+
+print(String(format: "TOTAL Average consumption: %0.2f l/100km", car.calculateTotalAverageConsumptionLitersPer100()))
+print(String(format: "TOTAL Average consumption: %0.2f mpg", car.calculateAverageConsumptionMpg()))
+print(String(format: "TOTAL Average price per kilometer: %0.2f bgn", car.calculateAveragePricePerKilometer(fuelPricePerLiter: pricePerLiter)))

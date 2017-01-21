@@ -1,0 +1,202 @@
+enum Unit: String {
+    case Pcs = "pcs."
+    case Grams = "gr."
+    case Mililiters = "ml."
+}
+
+enum Products: CustomStringConvertible {
+    case sugar
+    case milk
+    case banana
+    case salt
+    case lemon
+    case pepper
+    
+    var description : String { 
+        switch self {
+            // Use Internationalization, as appropriate.
+            case .sugar: return "Sugar";
+            case .milk: return "Milk";
+            case .banana: return "Banana";
+            case .salt: return "Salt";
+            case .lemon: return "Lemon";
+            case .pepper: return "Pepper";
+        }
+    }
+}
+
+struct Product {
+    var productName: String
+    var quantity: Double
+    
+    init (productName: String, quantity: Double) {
+        self.productName = productName
+        self.quantity = quantity
+    }
+    
+    func getUnitName() -> String {
+        switch self.productName {
+            case "Sugar", "Salt", "Pepper":
+                return Unit.Grams.rawValue;
+            case "Milk":
+                return Unit.Mililiters.rawValue;
+            case "Banana", "Lemon":
+                return Unit.Pcs.rawValue;
+            
+            default:
+                return "";
+        }
+    }
+}
+
+func printProducts(products: [Product]) {
+    for product in products {
+        print("\(product.productName) - \(product.quantity) \(product.getUnitName())")
+    }
+}
+
+struct Recipe {
+    var name: String
+    let timeToCook: Int //in munutes
+    var products: [Product]
+    
+    func printString() {
+        print("Recipe: \(name)\nTime to cook: \(timeToCook) minutes\nProducts contained:")
+        
+        printProducts(products: products)
+        
+        print(" ")
+    }
+}
+
+func printNotEnoughOfProduct(product: Product, quantityToBuy: Double) {
+    print("You don't have enough \(product.productName). You should buy \(quantityToBuy) \(product.getUnitName())")
+}
+
+struct Kitchen {
+    var products: [Product]
+    
+    func checkIfCanBeCooked(dish: Recipe) -> Bool {
+        var canBeCooked = true;
+    
+        for dishProduct in dish.products {
+            
+            var quantityToBuy = 0.0
+            var shouldBuy = true;
+            
+            for currentProduct in products {
+                if dishProduct.productName == currentProduct.productName {
+                    quantityToBuy = currentProduct.quantity - dishProduct.quantity
+                
+                    if quantityToBuy >= 0 {
+                        shouldBuy = false;
+                        break;
+                    } else {
+                        printNotEnoughOfProduct(product: dishProduct, quantityToBuy: quantityToBuy)
+                        canBeCooked = false;
+                    }
+                }
+            }
+            
+            if shouldBuy {
+                printNotEnoughOfProduct(product: dishProduct, quantityToBuy: dishProduct.quantity)
+                canBeCooked = false;
+            }
+        }
+        
+        return canBeCooked
+    }
+    
+    func cook(dish: Recipe) {
+        if checkIfCanBeCooked(dish: dish) {
+            for dishProduct in dish.products {
+                for currentProduct in self.products {
+                    if dishProduct.productName == currentProduct.productName {
+                        currentProduct.quantity -= dishProduct.quantity
+                        
+                        
+                    }
+                }
+            }
+            
+            print("\(dish.name) was just cooked !")
+        }
+    }
+}
+
+func searchRecipesBy(productName: String, recipes: [Recipe]) -> [Recipe] {
+    var resultRecipes = [Recipe]()
+
+    for recipe in recipes {
+        for product in recipe.products {
+            if product.productName == productName {
+                resultRecipes.append(recipe)
+                break;
+            }
+        }
+    }
+    
+    return resultRecipes
+}
+
+func printRecipes(recipes: [Recipe]) {
+    for recipe in recipes {
+        recipe.printString()
+    }
+}
+
+var firstRecipeProducts = [
+Product(productName: Products.sugar.description, quantity: 150),
+Product(productName: Products.milk.description, quantity: 150),
+Product(productName: Products.banana.description, quantity: 5),
+];
+                    
+var secondRecipeProducts = [
+Product(productName: Products.milk.description, quantity: 450),
+Product(productName: Products.banana.description, quantity: 1),
+Product(productName: Products.lemon.description, quantity: 2),
+];
+                        
+var thirdRecipeProducts = [
+Product(productName: Products.milk.description, quantity: 750),
+Product(productName: Products.salt.description, quantity: 20),
+Product(productName: Products.pepper.description, quantity: 2),
+];
+                       
+                        
+var allRecipes = [Recipe]()
+
+allRecipes.append(Recipe(name: "cake", 
+                        timeToCook: 120, 
+                        products: firstRecipeProducts))
+allRecipes.append(Recipe(name: "pancake", 
+                        timeToCook: 60, 
+                        products: secondRecipeProducts))
+allRecipes.append(Recipe(name: "muffin", 
+                        timeToCook: 45, 
+                        products: thirdRecipeProducts))
+
+print("All recipes:")
+printRecipes(recipes: allRecipes)
+
+var recipesContainingProduct = searchRecipesBy(productName: Products.lemon.description, recipes: allRecipes)
+
+print(" ")
+print("Recipes containing lemon:")
+printRecipes(recipes: recipesContainingProduct)
+
+
+var kitchen = Kitchen(products: [
+Product(productName: Products.lemon.description, quantity: 2),
+Product(productName: Products.milk.description, quantity: 800),
+Product(productName: Products.banana.description, quantity: 800),
+Product(productName: Products.sugar.description, quantity: 800),
+])
+
+if kitchen.checkIfCanBeCooked(dish: allRecipes[0]) {
+    print("You have the products to cook \(allRecipes[0].name)")
+    print("Start cooking")
+    kitchen.cook(dish: allRecipes[0])
+    print("Products left:")
+    printProducts(products: kitchen.products)
+}

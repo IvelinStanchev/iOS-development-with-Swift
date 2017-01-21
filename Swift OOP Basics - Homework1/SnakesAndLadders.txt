@@ -1,0 +1,144 @@
+//Sorry for giving you .txt file but I was compiling the code online but not in Xcode Playground
+
+let startingPosition = 1
+let boardSize = 8
+let boardSquaresCount = boardSize * boardSize
+
+struct Player {
+    var position: Int!
+    var name: String!
+    
+    func toss() -> Int {
+        let toss = Int(arc4random_uniform(6) + 1)
+        print("\(name!) tossed \(toss)")
+        return toss
+    }
+}
+
+struct Teleport {
+    var fromPos: Int
+    var toPos: Int
+}
+
+func isSnake (teleport: Teleport) -> Bool {
+    return teleport.fromPos > teleport.toPos
+}
+
+func isLadder (teleport: Teleport) -> Bool {
+    return teleport.fromPos < teleport.toPos
+}
+
+struct GameBoard {
+
+    var teleports: [Teleport] 
+
+    func movePlayer(player: inout Player, playerToss: Int!) {
+        //check for snake or ladder
+        var oldPosition: Int! = player.position
+        
+        player.position = player.position + playerToss
+        
+        if (player.position <= boardSquaresCount) {
+            print("Moved \(player.name!) from position \(oldPosition!) to \(player.position!)")
+        }
+        
+        for teleport in teleports {
+            if teleport.fromPos == player.position {
+                if isSnake(teleport: teleport) {
+                    print("\(player.name!) just hit a SNAKE") 
+                } else if isLadder(teleport: teleport) {
+                    print("\(player.name!) just hit a LADDER") 
+                }
+                
+                oldPosition = player.position
+            
+                player.position = teleport.toPos
+                
+                if (player.position <= boardSquaresCount) {
+                    print("Moved \(player.name!) from position \(oldPosition!) to \(player.position!)")
+                }
+            }
+        }
+    }
+    
+    func printWinner(player1: Player, player2: Player) {
+        let winner =  (player1.position > boardSquaresCount) ? player1 : player2
+    
+        print("The winner is \(winner.name!)")
+    }
+    
+    func isGameEnd(player1: Player, player2: Player) -> Bool {
+        if (player1.position > boardSquaresCount || 
+        player2.position > boardSquaresCount) {
+            return true
+        }
+        
+        return false
+    }
+}
+
+var player1 = Player(position: startingPosition, name: "pesho")
+var player2 = Player(position: startingPosition, name: "gosho")
+
+var teleports = [Teleport(fromPos: 15, toPos: 10),
+                    Teleport(fromPos: 25, toPos: 5),
+                    Teleport(fromPos: 35, toPos: 30),
+                    Teleport(fromPos: 8, toPos: 40),
+                    Teleport(fromPos: 18, toPos: 24),
+                    Teleport(fromPos: 41, toPos: 45)]
+
+var gameBoard = GameBoard(teleports: teleports)
+
+var player1Toss: Int
+var player2Toss: Int
+
+func isGameEnd(gameBoard: GameBoard, player1: Player, player2: Player) -> Bool{
+    if (gameBoard.isGameEnd(player1: player1, player2: player2)) {
+        gameBoard.printWinner(player1: player1, player2: player2)
+        return true
+    }
+    
+    return false
+}
+
+var gameEnded: Bool = false
+
+while (!gameEnded) {
+    
+    player1Toss = player1.toss()
+    gameBoard.movePlayer(player: &player1, playerToss: player1Toss)
+    
+    if isGameEnd(gameBoard: gameBoard, player1: player1, player2: player2) {
+        gameEnded = true
+        break
+    }
+    
+    while (player1Toss == 6) {
+        player1Toss = player1.toss()
+        gameBoard.movePlayer(player: &player1, playerToss: player1Toss)
+    
+        if isGameEnd(gameBoard: gameBoard, player1: player1, player2: player2) {
+            gameEnded = true
+            break
+        }
+    }
+    
+    if (!gameEnded) {
+        player2Toss = player2.toss()
+        gameBoard.movePlayer(player: &player2, playerToss: player2Toss)
+        if isGameEnd(gameBoard: gameBoard, player1: player1, player2: player2) {
+            gameEnded = true
+            break
+        }
+        
+        while (player2Toss == 6) {
+            player2Toss = player2.toss()
+            gameBoard.movePlayer(player: &player2, playerToss: player2Toss)
+        
+            if isGameEnd(gameBoard: gameBoard, player1: player1, player2: player2) {
+                gameEnded = true
+                break
+            }
+        }
+    }
+}

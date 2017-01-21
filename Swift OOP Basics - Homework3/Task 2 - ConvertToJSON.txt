@@ -1,0 +1,86 @@
+struct CustomType {
+    var array: [String]?
+    var arrayOfDictionaries: [[String : String]]?
+}
+
+class Convertor {
+    
+    class func renderOutput(output: [String : [String : CustomType]]) {
+        for (key, value) in output {
+            print("\"\(key)\":")
+            print("{")
+            
+            var counter = 0
+            for (keyCustom, valueCustom) in value {
+                print("  \"\(keyCustom)\" : [")
+                
+                let currentCustomType: CustomType = valueCustom
+                
+                if let array = currentCustomType.array {
+                    convertStringArrayToJSON(array)
+                }
+                
+                if let arrayOfDictionaries = currentCustomType.arrayOfDictionaries {
+                    convertDictionaryArrayToJSON(arrayOfDictionaries)
+                }
+                
+                if counter == value.count - 1 {
+                    print("  ]")
+                } else {
+                    print("  ],")
+                }
+                
+                counter += 1;
+            }
+            
+            print("}")
+        }
+    }
+    
+    class func convertStringArrayToJSON(array: [String]) {
+        for i in 0..<array.count {
+            if i == array.count - 1 {
+                print("    \(array[i])")
+            } else {
+                print("    \(array[i]),")
+            }
+        }
+    }
+    
+    class func convertDictionaryArrayToJSON(arrayOfDictionaries: [Dictionary<String, String>]) {
+        for i in 0..<arrayOfDictionaries.count {
+            if i == arrayOfDictionaries.count - 1 {
+                print("   {")
+                convertStringDictionaryToJSON(arrayOfDictionaries[i])
+                print("   }")
+            } else {
+                print("   {")
+                convertStringDictionaryToJSON(arrayOfDictionaries[i])
+                print("   },")
+            }
+        }
+    }
+    
+    class func convertStringDictionaryToJSON(dictionary: [String: String]) {
+        for (key, value) in dictionary {
+            print("   \"\(key)\" : \"\(value)\"")
+        }
+    }
+}
+
+var array = ["test1", "test2", "test3"]
+
+var dictionary1 = ["test1Key" : "test1Value", "test2Key" : "test2Value", "test3Key" : "test3Value"]
+var dictionary2 = ["test4Key" : "test4Value", "test5Key" : "test5Value", "test6Key" : "test6Value"]
+
+var arrayOfDictionaries = [
+    dictionary1,
+    dictionary2
+]
+
+var customType1 = CustomType(array: array, arrayOfDictionaries: nil)
+var customType2 = CustomType(array: nil, arrayOfDictionaries: arrayOfDictionaries)
+
+var output: [String : [String : CustomType]] = ["Output" : ["deleted":customType1, "modified":customType2]]
+
+Convertor.renderOutput(output)

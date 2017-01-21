@@ -1,0 +1,159 @@
+class Quadrangle {
+	var sideA: Float
+	var sideB: Float
+	var sideC: Float
+	var sideD: Float
+	var diagonal: Float
+	
+	init (sideA: Float, sideB: Float, sideC: Float, sideD: Float, diagonal: Float) {
+		self.sideA = sideA
+		self.sideB = sideB
+		self.sideC = sideC
+		self.sideD = sideD
+		self.diagonal = diagonal
+	}
+	
+	func calculatePerimeter() -> Float {
+	    switch self {
+			case is Square:
+				return 4 * sideA
+			case is Rectangle:
+				return 2 * (sideA + sideB)
+			case is Rhombus:
+				return 4 * sideA
+			case is Trapezoid:
+				return sideA + sideB + sideC + sideD
+			default: return 0.0
+		}
+	}
+	
+	func calculateSurface() -> Float {
+		switch self {
+			case is Square:
+				return sideA * sideA
+			case is Rectangle:
+				return sideA * sideB
+			case is Rhombus:
+			    let halfRhombus = Triangle(sideA: sideA, sideB: sideA, sideC: diagonal)
+			    return 2 * halfRhombus.calculateSurface()
+			case is Trapezoid:
+			    let insideSqrt = (sideB + sideD + sideA - sideC) *
+			                        (sideD + sideA - sideC - sideB) *
+			                        (sideB + sideA - sideC - sideD) *
+			                        (sideB + sideD - sideA + sideC)
+			    let area = 1/4 * ((sideA + sideC) / (sideA - sideC)) * sqrt(insideSqrt)
+			    return area
+			default: return 0.0
+		}
+	}
+}
+
+class Polygon {
+    var side: Float
+    
+    init (side: Float) {
+        self.side = side
+    }
+    
+    func calculatePerimeter() -> Float {
+	    switch self {
+			case is Pentagon:
+			    return 5 * side
+			case is Hexagon:
+			    return 6 * side
+			default: return 0.0
+		}
+	}
+	
+	func calculateSurface() -> Float {
+		let apothem = sqrt((side * side) - ((side / 2) * (side / 2)))
+	    return (calculatePerimeter() / 2) * apothem
+	}
+}
+
+class Pentagon : Polygon {
+
+    override init (side: Float) {
+        super.init(side: side)
+    }
+}
+
+class Hexagon : Polygon {
+
+    override init (side: Float) {
+        super.init(side: side)
+    }
+}
+
+class Triangle {
+	var sideA: Float
+	var sideB: Float
+	var sideC: Float
+    
+    init (sideA: Float, sideB: Float, sideC: Float) {
+        self.sideA = sideA
+		self.sideB = sideB
+		self.sideC = sideC
+    }
+    
+    func calculatePerimeter() -> Float {
+        return sideA + sideB + sideC
+    }
+    
+    func calculateSurface() -> Float {
+		let p = calculatePerimeter() / 2
+	
+        return sqrt(p * (p - sideA) * (p - sideB) * (p - sideC))
+    }
+}
+
+class Square : Quadrangle {
+
+	init (side: Float) {
+	    let diagonal = sqrt(2 * side * side)
+		super.init(sideA: side, sideB: side, sideC: side, sideD: side, diagonal: 0.0)
+	}
+}
+
+class Rectangle : Quadrangle {
+
+    init (sideA: Float, sideB: Float) {
+        let diagonal = sqrt(sideA * sideA + sideB * sideB)
+		super.init(sideA: sideA, sideB: sideB, sideC: sideA, sideD: sideB, diagonal: 0.0)
+	}
+}
+
+class Rhombus : Quadrangle {
+
+    init (side: Float, diagonal: Float) {
+		super.init(sideA: side, sideB: side, sideC: side, sideD: side, diagonal: diagonal)
+	}
+}
+
+class Trapezoid : Quadrangle {
+
+    init (AB: Float, BC: Float, CD: Float, AD: Float) {
+		super.init(sideA: AB, sideB: BC, sideC: CD, sideD: AD, diagonal: 0.0)
+	}
+}
+
+var triangle = Triangle(sideA: 5.0, sideB: 8.0, sideC: 10.0)
+print(triangle.calculatePerimeter(), triangle.calculateSurface())
+
+var square = Square(side: 5.0)
+print(square.calculatePerimeter(), square.calculateSurface())
+
+var rectangle = Rectangle(sideA: 5.0, sideB: 2.8)
+print(rectangle.calculatePerimeter(), rectangle.calculateSurface())
+
+var rhombus = Rhombus(side: 5.0, diagonal: 8.0)
+print(rhombus.calculatePerimeter(), rhombus.calculateSurface())
+
+var trapezoid = Trapezoid(AB: 8, BC: 4, CD: 3, AD: 2)
+print(trapezoid.calculatePerimeter(), trapezoid.calculateSurface())
+
+var pentagon = Pentagon(side: 5.0)
+print(pentagon.calculatePerimeter(), pentagon.calculateSurface())
+
+var hexagon = Hexagon(side: 5.0)
+print(hexagon.calculatePerimeter(), hexagon.calculateSurface())

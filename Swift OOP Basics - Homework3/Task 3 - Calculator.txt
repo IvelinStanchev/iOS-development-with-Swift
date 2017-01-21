@@ -1,0 +1,48 @@
+struct UnifiedNumber {
+    var value: String
+    var numericalSystem: Int
+}
+
+enum Operation {
+    case Sum, Subtract, Multiply, Divide
+}
+
+class Calculator {
+    
+    class func execute(operation operation: Operation, forNumbers: [UnifiedNumber], inSystem: Int) -> String {
+        var result: Int
+        
+        switch operation {
+            case .Sum, .Subtract:
+                result = 0
+            case .Multiply, .Divide:
+                result = 1
+        }
+    
+        for unifiedNumber in forNumbers {
+            //convet to decimal and execute given operation
+            let currentNumberValueAsDecimal = Int(unifiedNumber.value, radix: unifiedNumber.numericalSystem)!
+            
+            switch operation {
+                case .Sum:
+                    result += currentNumberValueAsDecimal
+                case .Subtract:
+                    result -= currentNumberValueAsDecimal
+                case .Multiply:
+                    result *= currentNumberValueAsDecimal
+                case .Divide:
+                    result /= currentNumberValueAsDecimal
+            }
+        }
+        
+        return String(result, radix: inSystem)
+    }
+}
+
+var number1 = UnifiedNumber(value: "1001", numericalSystem: 2)
+var number2 = UnifiedNumber(value: "6071", numericalSystem: 8)
+var number3 = UnifiedNumber(value: "ff0d", numericalSystem: 16)
+print(Calculator.execute(operation: .Sum, forNumbers: [number1, number2, number3], inSystem: 10))
+print(Calculator.execute(operation: .Subtract, forNumbers: [number1, number2, number3], inSystem: 10))
+print(Calculator.execute(operation: .Multiply, forNumbers: [number1, number2, number3], inSystem: 10))
+print(Calculator.execute(operation: .Divide, forNumbers: [number1, number2, number3], inSystem: 10))
