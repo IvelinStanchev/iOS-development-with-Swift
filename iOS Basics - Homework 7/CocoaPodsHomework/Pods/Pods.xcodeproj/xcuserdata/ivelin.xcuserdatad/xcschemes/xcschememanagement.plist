@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>DynamicButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DynamicColor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DynamicFont.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Nuke.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CocoaPodsHomework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>19864AB8F7B8E9064740E008772C4404</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39072F4345A257E813A488317BC02EA8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4621C3F9BE4863F63014320D83FFE6F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAE24ACA00B7B35A5EB9168B684E5317</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1DAEFAD49604AEC288C4F22289D761E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

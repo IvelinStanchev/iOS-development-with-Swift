@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A51076C01E3C8BBD007306E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51076BF1E3C8BBD007306E0 /* AppDelegate.swift */; };
+		A51076C51E3C8BBD007306E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51076C31E3C8BBD007306E0 /* Main.storyboard */; };
+		A51076C71E3C8BBD007306E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A51076C61E3C8BBD007306E0 /* Assets.xcassets */; };
+		A51076CA1E3C8BBD007306E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51076C81E3C8BBD007306E0 /* LaunchScreen.storyboard */; };
+		A51076D51E3C9C09007306E0 /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51076D41E3C9C09007306E0 /* DishModel.swift */; };
+		A5BE94121E3E1B6600918508 /* star_favourites_full.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94111E3E1B6600918508 /* star_favourites_full.png */; };
+		A5BE94141E3E1BB100918508 /* star_favourites_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94131E3E1BB100918508 /* star_favourites_empty.png */; };
+		A5BE94161E3E345D00918508 /* sausage_potato_kale_soup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94151E3E345D00918508 /* sausage_potato_kale_soup.jpg */; };
+		A5BE94181E3E365100918508 /* maryland_crab_cakes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94171E3E365100918508 /* maryland_crab_cakes.jpg */; };
+		A5BE94221E3E37F500918508 /* chicken_and_ham_casserole.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94191E3E37F500918508 /* chicken_and_ham_casserole.jpg */; };
+		A5BE94231E3E37F500918508 /* slow_cooker_beef_pot_roast.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE941A1E3E37F500918508 /* slow_cooker_beef_pot_roast.jpg */; };
+		A5BE94241E3E37F500918508 /* triple_dipped_fried_chicken.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE941B1E3E37F500918508 /* triple_dipped_fried_chicken.jpg */; };
+		A5BE94251E3E37F500918508 /* roast_sticky_chicken_rotisserie_style.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE941C1E3E37F500918508 /* roast_sticky_chicken_rotisserie_style.jpg */; };
+		A5BE94261E3E37F500918508 /* cabbage_rolls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE941D1E3E37F500918508 /* cabbage_rolls.jpg */; };
+		A5BE94271E3E37F500918508 /* baked_spaghetti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE941E1E3E37F500918508 /* baked_spaghetti.jpg */; };
+		A5BE94291E3E37F500918508 /* caramelized_baked_chicken.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94201E3E37F500918508 /* caramelized_baked_chicken.jpg */; };
+		A5BE942A1E3E37F500918508 /* healthier_sow_cooker_chicken_tortilla_soup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94211E3E37F500918508 /* healthier_sow_cooker_chicken_tortilla_soup.jpg */; };
+		A5BE942E1E3E3C0600918508 /* oven_baked_chicken_teriyaki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE942D1E3E3C0600918508 /* oven_baked_chicken_teriyaki.jpg */; };
+		A5BE94311E3E3D7000918508 /* waikiki_meatballs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE942F1E3E3D7000918508 /* waikiki_meatballs.jpg */; };
+		A5BE94321E3E3D7000918508 /* cabbage_fat_burning_soup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94301E3E3D7000918508 /* cabbage_fat_burning_soup.jpg */; };
+		A5BE94341E3E3EF900918508 /* slow_cooker_salisbury_steak.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5BE94331E3E3EF900918508 /* slow_cooker_salisbury_steak.jpg */; };
+		A5EDE1981E3CA2C300A2F928 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EDE1971E3CA2C300A2F928 /* RecipesTableViewController.swift */; };
+		A5EDE19A1E3CA62F00A2F928 /* ChosenRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EDE1991E3CA62F00A2F928 /* ChosenRecipeViewController.swift */; };
+		A5EDE19F1E3D19C900A2F928 /* addictive_sesame_chicken.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5EDE19E1E3D19C900A2F928 /* addictive_sesame_chicken.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A51076BC1E3C8BBD007306E0 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51076BF1E3C8BBD007306E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A51076C41E3C8BBD007306E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A51076C61E3C8BBD007306E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A51076C91E3C8BBD007306E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A51076CB1E3C8BBD007306E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A51076D41E3C9C09007306E0 /* DishModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
+		A5BE94111E3E1B6600918508 /* star_favourites_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_favourites_full.png; sourceTree = "<group>"; };
+		A5BE94131E3E1BB100918508 /* star_favourites_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_favourites_empty.png; sourceTree = "<group>"; };
+		A5BE94151E3E345D00918508 /* sausage_potato_kale_soup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sausage_potato_kale_soup.jpg; sourceTree = "<group>"; };
+		A5BE94171E3E365100918508 /* maryland_crab_cakes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maryland_crab_cakes.jpg; sourceTree = "<group>"; };
+		A5BE94191E3E37F500918508 /* chicken_and_ham_casserole.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chicken_and_ham_casserole.jpg; sourceTree = "<group>"; };
+		A5BE941A1E3E37F500918508 /* slow_cooker_beef_pot_roast.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slow_cooker_beef_pot_roast.jpg; sourceTree = "<group>"; };
+		A5BE941B1E3E37F500918508 /* triple_dipped_fried_chicken.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = triple_dipped_fried_chicken.jpg; sourceTree = "<group>"; };
+		A5BE941C1E3E37F500918508 /* roast_sticky_chicken_rotisserie_style.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roast_sticky_chicken_rotisserie_style.jpg; sourceTree = "<group>"; };
+		A5BE941D1E3E37F500918508 /* cabbage_rolls.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cabbage_rolls.jpg; sourceTree = "<group>"; };
+		A5BE941E1E3E37F500918508 /* baked_spaghetti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = baked_spaghetti.jpg; sourceTree = "<group>"; };
+		A5BE94201E3E37F500918508 /* caramelized_baked_chicken.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = caramelized_baked_chicken.jpg; sourceTree = "<group>"; };
+		A5BE94211E3E37F500918508 /* healthier_sow_cooker_chicken_tortilla_soup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = healthier_sow_cooker_chicken_tortilla_soup.jpg; sourceTree = "<group>"; };
+		A5BE942D1E3E3C0600918508 /* oven_baked_chicken_teriyaki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oven_baked_chicken_teriyaki.jpg; sourceTree = "<group>"; };
+		A5BE942F1E3E3D7000918508 /* waikiki_meatballs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waikiki_meatballs.jpg; sourceTree = "<group>"; };
+		A5BE94301E3E3D7000918508 /* cabbage_fat_burning_soup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cabbage_fat_burning_soup.jpg; sourceTree = "<group>"; };
+		A5BE94331E3E3EF900918508 /* slow_cooker_salisbury_steak.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slow_cooker_salisbury_steak.jpg; sourceTree = "<group>"; };
+		A5EDE1971E3CA2C300A2F928 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		A5EDE1991E3CA62F00A2F928 /* ChosenRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenRecipeViewController.swift; sourceTree = "<group>"; };
+		A5EDE19E1E3D19C900A2F928 /* addictive_sesame_chicken.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = addictive_sesame_chicken.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A51076B91E3C8BBD007306E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A51076B31E3C8BBD007306E0 = {
+			isa = PBXGroup;
+			children = (
+				A5EDE19D1E3D183B00A2F928 /* Images */,
+				A51076D11E3C97E7007306E0 /* Models */,
+				A51076BE1E3C8BBD007306E0 /* Recipes */,
+				A51076BD1E3C8BBD007306E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A51076BD1E3C8BBD007306E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A51076BC1E3C8BBD007306E0 /* Recipes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A51076BE1E3C8BBD007306E0 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				A5EDE1971E3CA2C300A2F928 /* RecipesTableViewController.swift */,
+				A5EDE1991E3CA62F00A2F928 /* ChosenRecipeViewController.swift */,
+				A51076BF1E3C8BBD007306E0 /* AppDelegate.swift */,
+				A51076C31E3C8BBD007306E0 /* Main.storyboard */,
+				A51076C61E3C8BBD007306E0 /* Assets.xcassets */,
+				A51076C81E3C8BBD007306E0 /* LaunchScreen.storyboard */,
+				A51076CB1E3C8BBD007306E0 /* Info.plist */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		A51076D11E3C97E7007306E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A51076D41E3C9C09007306E0 /* DishModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A5EDE19D1E3D183B00A2F928 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A5EDE19E1E3D19C900A2F928 /* addictive_sesame_chicken.jpg */,
+				A5BE94331E3E3EF900918508 /* slow_cooker_salisbury_steak.jpg */,
+				A5BE94111E3E1B6600918508 /* star_favourites_full.png */,
+				A5BE94131E3E1BB100918508 /* star_favourites_empty.png */,
+				A5BE94151E3E345D00918508 /* sausage_potato_kale_soup.jpg */,
+				A5BE94171E3E365100918508 /* maryland_crab_cakes.jpg */,
+				A5BE94191E3E37F500918508 /* chicken_and_ham_casserole.jpg */,
+				A5BE941A1E3E37F500918508 /* slow_cooker_beef_pot_roast.jpg */,
+				A5BE941B1E3E37F500918508 /* triple_dipped_fried_chicken.jpg */,
+				A5BE941C1E3E37F500918508 /* roast_sticky_chicken_rotisserie_style.jpg */,
+				A5BE941D1E3E37F500918508 /* cabbage_rolls.jpg */,
+				A5BE941E1E3E37F500918508 /* baked_spaghetti.jpg */,
+				A5BE942D1E3E3C0600918508 /* oven_baked_chicken_teriyaki.jpg */,
+				A5BE94201E3E37F500918508 /* caramelized_baked_chicken.jpg */,
+				A5BE94211E3E37F500918508 /* healthier_sow_cooker_chicken_tortilla_soup.jpg */,
+				A5BE942F1E3E3D7000918508 /* waikiki_meatballs.jpg */,
+				A5BE94301E3E3D7000918508 /* cabbage_fat_burning_soup.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A51076BB1E3C8BBD007306E0 /* Recipes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A51076CE1E3C8BBD007306E0 /* Build configuration list for PBXNativeTarget "Recipes" */;
+			buildPhases = (
+				A51076B81E3C8BBD007306E0 /* Sources */,
+				A51076B91E3C8BBD007306E0 /* Frameworks */,
+				A51076BA1E3C8BBD007306E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Recipes;
+			productName = Recipes;
+			productReference = A51076BC1E3C8BBD007306E0 /* Recipes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A51076B41E3C8BBD007306E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = SoftUni;
+				TargetAttributes = {
+					A51076BB1E3C8BBD007306E0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A51076B71E3C8BBD007306E0 /* Build configuration list for PBXProject "Recipes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A51076B31E3C8BBD007306E0;
+			productRefGroup = A51076BD1E3C8BBD007306E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A51076BB1E3C8BBD007306E0 /* Recipes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A51076BA1E3C8BBD007306E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5BE94241E3E37F500918508 /* triple_dipped_fried_chicken.jpg in Resources */,
+				A5BE94221E3E37F500918508 /* chicken_and_ham_casserole.jpg in Resources */,
+				A5BE94341E3E3EF900918508 /* slow_cooker_salisbury_steak.jpg in Resources */,
+				A5BE94261E3E37F500918508 /* cabbage_rolls.jpg in Resources */,
+				A5BE94121E3E1B6600918508 /* star_favourites_full.png in Resources */,
+				A5BE94311E3E3D7000918508 /* waikiki_meatballs.jpg in Resources */,
+				A51076CA1E3C8BBD007306E0 /* LaunchScreen.storyboard in Resources */,
+				A51076C71E3C8BBD007306E0 /* Assets.xcassets in Resources */,
+				A5BE94321E3E3D7000918508 /* cabbage_fat_burning_soup.jpg in Resources */,
+				A5BE94231E3E37F500918508 /* slow_cooker_beef_pot_roast.jpg in Resources */,
+				A5BE94271E3E37F500918508 /* baked_spaghetti.jpg in Resources */,
+				A5BE94291E3E37F500918508 /* caramelized_baked_chicken.jpg in Resources */,
+				A5BE942A1E3E37F500918508 /* healthier_sow_cooker_chicken_tortilla_soup.jpg in Resources */,
+				A5BE94161E3E345D00918508 /* sausage_potato_kale_soup.jpg in Resources */,
+				A5BE94141E3E1BB100918508 /* star_favourites_empty.png in Resources */,
+				A51076C51E3C8BBD007306E0 /* Main.storyboard in Resources */,
+				A5BE94251E3E37F500918508 /* roast_sticky_chicken_rotisserie_style.jpg in Resources */,
+				A5BE942E1E3E3C0600918508 /* oven_baked_chicken_teriyaki.jpg in Resources */,
+				A5EDE19F1E3D19C900A2F928 /* addictive_sesame_chicken.jpg in Resources */,
+				A5BE94181E3E365100918508 /* maryland_crab_cakes.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A51076B81E3C8BBD007306E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EDE19A1E3CA62F00A2F928 /* ChosenRecipeViewController.swift in Sources */,
+				A51076C01E3C8BBD007306E0 /* AppDelegate.swift in Sources */,
+				A5EDE1981E3CA2C300A2F928 /* RecipesTableViewController.swift in Sources */,
+				A51076D51E3C9C09007306E0 /* DishModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A51076C31E3C8BBD007306E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A51076C41E3C8BBD007306E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A51076C81E3C8BBD007306E0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A51076C91E3C8BBD007306E0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A51076CC1E3C8BBD007306E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A51076CD1E3C8BBD007306E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A51076CF1E3C8BBD007306E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Recipes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.recipes.softuni.Recipes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A51076D01E3C8BBD007306E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Recipes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.recipes.softuni.Recipes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A51076B71E3C8BBD007306E0 /* Build configuration list for PBXProject "Recipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A51076CC1E3C8BBD007306E0 /* Debug */,
+				A51076CD1E3C8BBD007306E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A51076CE1E3C8BBD007306E0 /* Build configuration list for PBXNativeTarget "Recipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A51076CF1E3C8BBD007306E0 /* Debug */,
+				A51076D01E3C8BBD007306E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A51076B41E3C8BBD007306E0 /* Project object */;
+}

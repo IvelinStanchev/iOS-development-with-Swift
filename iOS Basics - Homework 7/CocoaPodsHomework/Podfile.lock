@@ -1,0 +1,21 @@
+PODS:
+  - DynamicButton (3.1.0)
+  - DynamicColor (3.2.1)
+  - DynamicFont (1.0.1)
+  - Nuke (4.1.2)
+
+DEPENDENCIES:
+  - DynamicButton (~> 3.1.0)
+  - DynamicColor (~> 3.2)
+  - DynamicFont (~> 1.0)
+  - Nuke (~> 4.1)
+
+SPEC CHECKSUMS:
+  DynamicButton: 37968af761a31274aeac427f40204688fa810342
+  DynamicColor: 4786d650c69da6c3f2cbfe068348288ec4e5521f
+  DynamicFont: 29d89318f84d9ebcc6fe714a9cb72f53f9686e28
+  Nuke: 7cfd2acdf90c36f66e6ea40795bac0d851a9afe0
+
+PODFILE CHECKSUM: a067330a336f87e5fd4790c801a0013948799e6c
+
+COCOAPODS: 1.1.1
